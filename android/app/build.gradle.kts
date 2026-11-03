@@ -22,7 +22,7 @@ android {
             storePassword = keystoreProperties["storePassword"] as String
         }
     }
-    namespace = "com.example.word_learn_play"
+    namespace = "com.labniharika.word_search"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -33,7 +33,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.labniharika.word_learn_play"
+        applicationId = "com.labniharika.word_search"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion

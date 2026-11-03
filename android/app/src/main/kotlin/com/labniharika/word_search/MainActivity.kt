@@ -1,4 +1,4 @@
-package com.wordsearch.word_search
+package com.labniharika.word_search
 
 import io.flutter.embedding.android.FlutterActivity
 
