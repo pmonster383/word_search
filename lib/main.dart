@@ -42,7 +42,7 @@ class _WordSearchAppState extends State<WordSearchApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Word Search Game',
+      title: 'Word: Learn & Play',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,

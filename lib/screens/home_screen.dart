@@ -235,8 +235,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       const SizedBox(height: 4),
 
-                      // Word Search Game Title Logo (Letter Tiles)
-                      _buildWordSearchGameLogo(),
+                      // Word: Learn & Play Game Title Logo
+                      _buildGameLogo(),
 
                       const SizedBox(height: 18),
 
@@ -307,42 +307,77 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildWordSearchGameLogo() {
+  Widget _buildGameLogo() {
     return Column(
       children: [
-        // Top Row: W O R D
+        // Top Row: W O R D 3D Letter Tiles
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _buildLetterTile('W', const Color(0xFF3B82F6)),
-            const SizedBox(width: 6),
+            const SizedBox(width: 7),
             _buildLetterTile('O', const Color(0xFF10B981)),
-            const SizedBox(width: 6),
+            const SizedBox(width: 7),
             _buildLetterTile('R', const Color(0xFFF59E0B)),
-            const SizedBox(width: 6),
+            const SizedBox(width: 7),
             _buildLetterTile('D', const Color(0xFFEC4899)),
           ],
         ),
-        const SizedBox(height: 6),
-        // Bottom Row: S E A R C H
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _buildLetterTile('S', const Color(0xFF8B5CF6)),
-            const SizedBox(width: 5),
-            _buildLetterTile('E', const Color(0xFF06B6D4)),
-            const SizedBox(width: 5),
-            _buildLetterTile('A', const Color(0xFFF97316)),
-            const SizedBox(width: 5),
-            _buildLetterTile('R', const Color(0xFF10B981)),
-            const SizedBox(width: 5),
-            _buildLetterTile('C', const Color(0xFF3B82F6)),
-            const SizedBox(width: 5),
-            _buildLetterTile('H', const Color(0xFFEF4444)),
-          ],
+        const SizedBox(height: 8),
+
+        // Glowing 3D Golden Game Ribbon: LEARN & PLAY
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 7),
+          decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              colors: [Color(0xFFF59E0B), Color(0xFFEA580C)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            borderRadius: BorderRadius.circular(22),
+            border: Border.all(color: Colors.white, width: 2),
+            boxShadow: [
+              BoxShadow(
+                color: const Color(0xFFEA580C).withOpacity(0.45),
+                blurRadius: 10,
+                offset: const Offset(0, 4),
+              ),
+              BoxShadow(
+                color: Colors.black.withOpacity(0.2),
+                blurRadius: 6,
+                offset: const Offset(0, 2),
+              ),
+            ],
+          ),
+          child: const Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.star_rounded, color: Color(0xFFFFE082), size: 18),
+              SizedBox(width: 8),
+              Text(
+                'LEARN & PLAY',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w900,
+                  fontSize: 16,
+                  letterSpacing: 2.0,
+                  shadows: [
+                    Shadow(
+                      color: Colors.black45,
+                      offset: Offset(1, 1),
+                      blurRadius: 3,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(width: 8),
+              Icon(Icons.star_rounded, color: Color(0xFFFFE082), size: 18),
+            ],
+          ),
         ),
         const SizedBox(height: 8),
-        // Sparkling Subtitle Badge
+
+        // Sparkling Subtitle Badge: 1,000 Chapters • 6,000 Levels
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 4),
           decoration: BoxDecoration(
@@ -353,7 +388,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: const Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.star_rounded, color: Color(0xFFFFD54F), size: 15),
+              Icon(Icons.auto_awesome, color: Color(0xFFFFD54F), size: 13),
               SizedBox(width: 6),
               Text(
                 '1,000 CHAPTERS • 6,000 LEVELS',
@@ -365,7 +400,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               SizedBox(width: 6),
-              Icon(Icons.star_rounded, color: Color(0xFFFFD54F), size: 15),
+              Icon(Icons.auto_awesome, color: Color(0xFFFFD54F), size: 13),
             ],
           ),
         ),
@@ -684,7 +719,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    'Chapters & Levels',
+                    'Chapters and Levels',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,
@@ -789,7 +824,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      'Timer Challenge',
+                      'Timer',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16,
